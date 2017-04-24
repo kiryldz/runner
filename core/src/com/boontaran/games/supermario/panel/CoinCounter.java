@@ -19,7 +19,7 @@ public class CoinCounter extends Group {
 		//label for coin number
 		LabelStyle style = new LabelStyle();
 		style.font = SuperMario.font1;
-		style.fontColor = new Color(0xffffffff);
+		style.fontColor = new Color(0x404040ff);
 		label = new Label("555", style);
 		setSize(label.getRight() + 30 , coin.getHeight());
 		
