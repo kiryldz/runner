@@ -36,7 +36,7 @@ public class LevelMap extends StageGame {
 		
 		
 		//world 1
-		LevelButton level1 = new LevelButton(1, "World-1");
+		LevelButton level1 = new LevelButton(1, "Day-1");
 		addChild(level1);
 		centerActorX(level1);
 		level1.setY(getHeight() - level1.getHeight() - 10);
@@ -45,7 +45,7 @@ public class LevelMap extends StageGame {
 		
 		
 		//world 2
-		LevelButton level2 = new LevelButton(2, "World-2");
+		LevelButton level2 = new LevelButton(2, "Day-2");
 		addChild(level2);
 		centerActorX(level2);
 		level2.setY(level1.getY() - level2.getHeight() - 20);
@@ -57,7 +57,7 @@ public class LevelMap extends StageGame {
 		totalScore += SuperMario.data.getScore(2);
 
 		//world 3
-		LevelButton level3 = new LevelButton(3, "World-3");
+		LevelButton level3 = new LevelButton(3, "Day-3");
 		addChild(level3);
 		centerActorX(level3);
 		level3.setY(level2.getY() - level3.getHeight() - 20);
@@ -68,7 +68,7 @@ public class LevelMap extends StageGame {
 		}
 		totalScore += SuperMario.data.getScore(3);
 
-		LevelButton level4 = new LevelButton(4, "World-4");
+		LevelButton level4 = new LevelButton(4, "Day-4");
 		addChild(level4);
 		centerActorX(level4);
 		level4.setY(level3.getY() - level4.getHeight() - 20);
@@ -79,7 +79,7 @@ public class LevelMap extends StageGame {
 		}
 		totalScore += SuperMario.data.getScore(4);
 
-		LevelButton level5 = new LevelButton(5, "World-5");
+		LevelButton level5 = new LevelButton(5, "Day-5");
 		addChild(level5);
 		centerActorX(level5);
 		level5.setY(level4.getY() - level5.getHeight() - 20);
