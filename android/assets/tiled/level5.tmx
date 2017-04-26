@@ -3,11 +3,6 @@
  <tileset firstgid="1" name="tiled1" tilewidth="64" tileheight="64" tilecount="64" columns="8">
   <image source="tiled1.png" width="512" height="512"/>
  </tileset>
- <layer name="Tile Layer 2" width="150" height="15">
-  <data encoding="base64" compression="zlib">
-   eJzt1LENACAIBEBncv/hrOxsiIoJ3k0An4fWAAAAiOivB7ig4k4A1a1+t38ugwhZ5ZE1ky7AOe6JHfqTp2rWVff6xQDQzgJZ
-  </data>
- </layer>
  <layer name="Tile Layer 1" width="150" height="15">
   <data encoding="base64" compression="zlib">
    eJztmN0OwyAIhfs63e523/d/re2mSUNQ+TmgLJ6EC5dOQD/Q9jhq6Fp0rq3a2lxtWXUxFuVna47ovnLj0f+1/rIk9YXukZL5zp+9hPYGxreKuN7i6TWS51H7LImdy0GTl7XffpS2qp71MYt/b/9o1XhmPlqOejH/A1fPGGcx5uWq+rp7jJPkDtMb9yQ5p0e1kaHWWSM5V+/fInLg1g9Ra3cukVxFqkrMnjsTiqsWQ3QuJGuVuKLn2IyYLT3Y6sPClZSh6HWqxBUqVq42aV2i7mKI90nNuiPXSLO3NKfVuUL3KGkOM+qmpQpcRcURpUiOVuPK8m5OtbnKjW81rlD3IKosrkZ3/AjfJ/FhGWedfZFc9b6FoPKiyuJq9GzknnjHCPsCqKqfsg==

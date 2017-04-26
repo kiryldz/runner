@@ -19,7 +19,7 @@ public class BulletCounter extends Group {
 		//the label showing how many bullets in stock
 		LabelStyle style = new LabelStyle();
 		style.font = SuperMario.font1;
-		style.fontColor = new Color(0x404040ff);
+		style.fontColor = new Color(0xffffffff);
 		label = new Label("555", style);
 		setSize(label.getRight() + 30 , 30);
 		bullet.setY((getHeight()-bullet.getHeight())/2);

@@ -4,22 +4,42 @@ import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.NinePatch;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
+import com.badlogic.gdx.scenes.scene2d.ui.Stack;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import com.badlogic.gdx.utils.Align;
 import com.boontaran.games.StageGame;
 import com.boontaran.games.supermario.LevelButton;
 import com.boontaran.games.supermario.SuperMario;
 
 public class LevelMap extends StageGame {
-	public static final int ON_ICON_SELECTED = 1;
+
+    PagedScrollPane scroll;
+
+    public static final int ON_ICON_SELECTED = 1;
 	public static final int ON_BACK = 2;
 	
 	public int selectedLevelId;
-			
-	
-	@Override
+
+    //total score
+    int totalScore=0;
+    int curLevelProgress;
+
+    private Table buildBackgroundLayer () {
+        Table layer = new Table();
+        NinePatch patch = new NinePatch(SuperMario.atlas.findRegion("map_bg"), 2, 2, 2, 2);
+        Image bg = new Image(patch);
+        fillScreen(bg, true, false);
+        layer.add(bg);
+        return layer;
+    }
+
+    @Override
 	protected void create() {
 		
 		//background
@@ -27,67 +47,35 @@ public class LevelMap extends StageGame {
 		Image bg = new Image(patch);
 		fillScreen(bg, true, false);
 		addChild(bg);
-		
-		
-		//total score
-		int totalScore=0;
-				
-		int curLevelProgress = 1+SuperMario.data.getLevelProgress();
-		
-		
-		//world 1
-		LevelButton level1 = new LevelButton(1, "Day-1");
-		addChild(level1);
-		centerActorX(level1);
-		level1.setY(getHeight() - level1.getHeight() - 10);
-		level1.addListener(levelButtonListener);
-		totalScore += SuperMario.data.getScore(1);
-		
-		
-		//world 2
-		LevelButton level2 = new LevelButton(2, "Day-2");
-		addChild(level2);
-		centerActorX(level2);
-		level2.setY(level1.getY() - level2.getHeight() - 20);
-		level2.addListener(levelButtonListener);
 
-		if(level2.getId() > curLevelProgress) {
-			level2.lock();
-		}
-		totalScore += SuperMario.data.getScore(2);
+        //stage.clear();
 
-		//world 3
-		LevelButton level3 = new LevelButton(3, "Day-3");
-		addChild(level3);
-		centerActorX(level3);
-		level3.setY(level2.getY() - level3.getHeight() - 20);
-		level3.addListener(levelButtonListener);
+        Stack stack = new Stack();
+        stage.addActor(stack);
+        stack.setSize(getWidth(),getHeight());
+        //stack.add(buildBackgroundLayer());
+        //stack.add(buildObjectsLayer());
 
-		if(level3.getId() > curLevelProgress) {
-			level3.lock();
-		}
-		totalScore += SuperMario.data.getScore(3);
+        scroll = new PagedScrollPane();
+        scroll.setFlingTime(0.1f);
+        scroll.setPageSpacing(25);
+        int c = 1;
+        for (int l = 0; l < 2; l++) {
+            Table levels = new Table().pad(50);
+            levels.defaults().pad(20, 40, 20, 40);
+            for (int y = 0; y < 2; y++) {
+                levels.row();
+                for (int x = 0; x < 3; x++) {
+                    levels.add(getLevelButton(c++)).expand().fill();
+                }
+            }
+            scroll.addPage(levels);
+        }
+        stack.add(scroll);
 
-		LevelButton level4 = new LevelButton(4, "Day-4");
-		addChild(level4);
-		centerActorX(level4);
-		level4.setY(level3.getY() - level4.getHeight() - 20);
-		level4.addListener(levelButtonListener);
+		curLevelProgress = 1+SuperMario.data.getLevelProgress();
 
-		if(level4.getId() > curLevelProgress) {
-			level4.lock();
-		}
-		totalScore += SuperMario.data.getScore(4);
 
-		LevelButton level5 = new LevelButton(5, "Day-5");
-		addChild(level5);
-		centerActorX(level5);
-		level5.setY(level4.getY() - level5.getHeight() - 20);
-		level5.addListener(levelButtonListener);
-
-		if(level5.getId() > curLevelProgress) {
-			level5.lock();
-		}
 		totalScore += SuperMario.data.getScore(5);
 
 		
@@ -100,6 +88,77 @@ public class LevelMap extends StageGame {
 		label.setY(10);
 		centerActorX(label);
 	}
+
+    public LevelButton getLevelButton(int level) {
+        LabelStyle Labelstyle = new LabelStyle();
+        Labelstyle.font = SuperMario.font1;
+        Labelstyle.fontColor = new Color(0x116ab5ff);
+
+        LevelButton button = new LevelButton(level,"World-"+level);
+
+        String levelName=String.valueOf(level);
+        Label label = new Label(levelName, Labelstyle);
+        //label.setFontScale(1f);
+        label.setAlignment(Align.bottom);
+        //label.setAlignment(Align.center);
+
+        if(5<level){
+            //button.stack(new Image(skinRunner.getDrawable("ball_lock")), label).expand().fill();
+        }else{
+            //button.stack(new Image(skinRunner.getDrawable("ball")), label).expand().fill();
+        }
+
+        //skinLibgdx.add("star-filled", skinLibgdx.newDrawable("white", Color.YELLOW), Drawable.class);
+        //skinLibgdx.add("star-unfilled", skinLibgdx.newDrawable("white", Color.GRAY), Drawable.class);
+
+        int stars = 3;
+
+        Table starTable = new Table();
+        starTable.defaults().pad(5);
+        if (stars >= 0) {
+            for (int star = 0; star < 3; star++) {
+                if (stars > star) {
+                    //starTable.add(new Image(skinRunner.getDrawable("star_y"))).width(20).height(20);
+                } else {
+                    //starTable.add(new Image(skinRunner.getDrawable("star_g"))).width(20).height(20);
+                }
+            }
+        }
+
+        //button.row();
+        //button.add(starTable).height(30);
+
+        button.setName(levelName);
+        button.addListener(levelButtonListener);
+        return button;
+    }
+
+
+
+
+/*    public LevelButton getLevelButton(int level){
+        LevelButton level1 = new LevelButton(level, "World-"+level);
+        addChild(level1);
+        centerActorX(level1);
+        if(level==1){
+            level1.setY(getHeight() - level1.getHeight() - 10);
+        }else{
+            level1.setY((getHeight() - level1.getHeight() - 10) - level1.getHeight() - 20);
+        }
+
+        level1.addListener(levelButtonListener);
+        totalScore += SuperMario.data.getScore(1);
+
+        if (level>1){
+            if(level1.getId() > curLevelProgress) {
+                level1.lock();
+            }
+        }
+
+
+        return level1;
+    }*/
+
 	//if icon clicked
 	private ClickListener levelButtonListener = new ClickListener(){
 
@@ -108,9 +167,7 @@ public class LevelMap extends StageGame {
 			LevelButton icon = (LevelButton)event.getTarget();
 			
 			if(icon.isLocked()) return;
-			
-			
-			
+
 			//note the selected id
 			selectedLevelId = icon.getId();
 			
@@ -123,8 +180,8 @@ public class LevelMap extends StageGame {
 		}
 		
 	};
-	
-	
+
+
 	@Override
 	public boolean keyDown(int keycode) {
 		if(keycode == Keys.ESCAPE || keycode == Keys.BACK){  //if back key is pressed
@@ -135,7 +192,5 @@ public class LevelMap extends StageGame {
 		}
 		return super.keyDown(keycode);
 	}
-
-
 
 }

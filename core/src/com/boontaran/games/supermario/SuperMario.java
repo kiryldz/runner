@@ -159,6 +159,7 @@ public class SuperMario extends GdxGame {
 	private void showLevelMap() {
 		//create
 		map = new LevelMap();
+
 		setScreen(map);
 		
 		//the callback

@@ -40,7 +40,7 @@ public class LevelCompletedDialog extends Group {
 		
 		LabelStyle style2 = new LabelStyle();
 		style2.font = SuperMario.font2;
-		style2.fontColor = new Color(0x243E60ff);
+		style2.fontColor = new Color(0x624601ff);
 		
 		//the score 
 		Label scoreLabel = new Label(String.valueOf(score) , style2);
