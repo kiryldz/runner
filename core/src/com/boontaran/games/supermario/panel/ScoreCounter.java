@@ -15,7 +15,7 @@ public class ScoreCounter extends Group {
 		//the label
 		LabelStyle style = new LabelStyle();
 		style.font = SuperMario.font1;
-		style.fontColor = new Color(0xffffffff);
+		style.fontColor = new Color(0x404040ff);
 		label = new Label("", style);
 		label.setWidth(260);
 		setScore(0);

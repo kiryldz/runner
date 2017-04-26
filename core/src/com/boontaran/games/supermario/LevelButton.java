@@ -29,7 +29,7 @@ public class LevelButton extends Group {
 		TextButtonStyle style = new TextButtonStyle();
 
 		style.font = SuperMario.font1;
-		style.fontColor = new Color(0x624601ff);
+		style.fontColor = new Color(0x243E60ff);
 
 		NinePatch patch = new NinePatch(SuperMario.atlas.findRegion("level_select_bg"), 14, 14, 14, 14);
 		style.up = new NinePatchDrawable(patch);

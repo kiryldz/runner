@@ -5,12 +5,12 @@
  </tileset>
  <layer name="Tile Layer 2" width="150" height="15">
   <data encoding="base64" compression="zlib">
-   eJztwQENAAAAwqD3T20PBxQAAAAAAAAAAPwbIygAAQ==
+   eJzt0rERwCAMA0BmYv/hqNLlKEgOG/w/gSS7NQAAAAA4S48OwJT7xLl1+z963boNa3b/Q9X/q9Q7smulnb+w05q33bJtmS3PY0eurN0huwE/zQMh
   </data>
  </layer>
  <layer name="Tile Layer 1" width="150" height="15">
   <data encoding="base64" compression="zlib">
-   eJztl0EOhTAIRL2O351773+trws3DaUUaClmXsLGmMDAUO22AQAAAAAAAAAAICNX5/MZ7Hf8ijgC6wFtypnV5kXNdtZ8TyJq9WTy3Bc0ULy6yplRULPl3veEyx1Vk5SWdzJo6KHmqV5fcX3r3b/a9y6zrzS1r6ZBCucpzXkliTcn5y9rDu+ZSHemtU8ZfaXRrjl/vebN+WukrzT3Ds96tH2y/HtZ7mAjNM3I4/nNk2gYsX8res5yBxutnSK6l1YN0fWs0ofIXqxUyxN/QYV5bw==
+   eJztl8EOxCAIRPs72972vv//W62HXgwiAops5iVcmiYyzGjrcQAAAAAAAAAAACAjv8HnK/g8dVZ1BfYD+tSetfyivF3l75eoVj+ZMvcPGiiKrtJ/7RkF5S33vifc2lE9SellJ4OGEVqZGs0VN7fR/df63mXOlab33TRI4TKlOa8k9WaGy5d1DW9PpHumt58y5kqjXXP+evnN5WtmrjT3Ds9+tHOy/HtZ7mAzNK1Yx/ObJ9EwY//tmDnLHWy2doroWVo1RPezyxwiZ7FTL6VuZqV5cg==
   </data>
  </layer>
  <objectgroup name="fixed">

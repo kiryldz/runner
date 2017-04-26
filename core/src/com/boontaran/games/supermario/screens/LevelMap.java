@@ -82,7 +82,7 @@ public class LevelMap extends StageGame {
 		//displaying total score
 		LabelStyle style = new LabelStyle();
 		style.font = SuperMario.font1;
-		style.fontColor = new Color(0x116ab5ff);
+		style.fontColor = new Color(0x243E60ff);
 		Label label = new Label("Score : "+totalScore, style);
 		addChild(label);
 		label.setY(10);
@@ -92,9 +92,9 @@ public class LevelMap extends StageGame {
     public LevelButton getLevelButton(int level) {
         LabelStyle Labelstyle = new LabelStyle();
         Labelstyle.font = SuperMario.font1;
-        Labelstyle.fontColor = new Color(0x116ab5ff);
+        Labelstyle.fontColor = new Color(0x243E60ff);
 
-        LevelButton button = new LevelButton(level,"World-"+level);
+        LevelButton button = new LevelButton(level,"Day-"+level);
 
         String levelName=String.valueOf(level);
         Label label = new Label(levelName, Labelstyle);
