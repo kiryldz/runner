@@ -11,6 +11,14 @@ public class Data {
 	private String levelScoreKey = "ls";
 	private String soundMuteKey = "smt";
 	private String musicMuteKey = "mmt";
+
+	public int getStar(int level){
+		return manager.getInt("s"+level, 0);
+	}
+
+	public void saveStar(int level,int result){
+		manager.saveInt("s"+level, result);
+	}
 	
 	public Data() {
 		manager = new DataManager(prefName);

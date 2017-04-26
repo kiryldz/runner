@@ -46,7 +46,9 @@ public class LevelCompletedDialog extends Group {
 		Label scoreLabel = new Label(String.valueOf(score) , style2);
 		addActor(scoreLabel);
 		scoreLabel.setPosition((getWidth() - scoreLabel.getWidth())/2, label.getY() - 50);
-		
+
+
+
 		//OK button
 		ImageButton okBtn = new ImageButton(
 				new TextureRegionDrawable(SuperMario.atlas.findRegion("ok_btn")), 

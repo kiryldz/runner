@@ -943,6 +943,8 @@ public class Level extends World {
 		pauseWorld();
 		
 		//show "level completed" dialog box
+		SuperMario.data.saveStar(id, 3);
+
 		LevelCompletedDialog dialog = new LevelCompletedDialog(score);
 		addOverlayChild(dialog);
 		centerActorXY(dialog);

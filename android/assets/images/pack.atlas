@@ -57,6 +57,20 @@ brick_d4
   orig: 15, 23
   offset: 0, 0
   index: -1
+brick_lock
+  rotate: false
+  xy: 1574, 603
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+brick_lock_old
+  rotate: false
+  xy: 1666, 715
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
 bullet
   rotate: false
   xy: 1265, 520
@@ -87,7 +101,7 @@ bullet_exp
   index: -1
 bullet_icon
   rotate: false
-  xy: 757, 463
+  xy: 1774, 688
   size: 23, 23
   orig: 23, 23
   offset: 0, 0
@@ -150,7 +164,7 @@ health_bar_bar
   index: -1
 health_bar_face
   rotate: false
-  xy: 1797, 831
+  xy: 757, 452
   size: 35, 34
   orig: 35, 34
   offset: 0, 0
@@ -283,21 +297,21 @@ music_on
   index: -1
 mystery_box
   rotate: false
-  xy: 1574, 603
+  xy: 1734, 715
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 mystery_box_hit
   rotate: false
-  xy: 1666, 715
+  xy: 1797, 801
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 mystery_box_inactive
   rotate: false
-  xy: 1734, 715
+  xy: 1802, 733
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
@@ -395,14 +409,14 @@ sound_on
   index: -1
 star_g
   rotate: false
-  xy: 1774, 691
+  xy: 1543, 579
   size: 20, 20
   orig: 20, 20
   offset: 0, 0
   index: -1
 star_y
   rotate: false
-  xy: 1797, 807
+  xy: 1567, 579
   size: 20, 20
   orig: 20, 20
   offset: 0, 0
