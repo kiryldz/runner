@@ -67,7 +67,7 @@ public class Level extends World {
 	public static Coin coin;
 	
 	//level data
-	private int numCoins,numBullets,score;
+	private int numCoins,numBullets,score, totalScore = 0;
 	
 	//pause dialog
 	private PauseDialog pauseDialog;
@@ -342,6 +342,7 @@ public class Level extends World {
 				coin.setPosition(rect.x + rect.width/2, rect.y + rect.height/2);
 				addEntity(coin);
 				coin.setFloat();
+				totalScore += coin.getScore();
 			}
 			else if(name.equals("mystery")) {
 				//mystery box
@@ -355,6 +356,7 @@ public class Level extends World {
 				if(obj.getProperties().get("coins") != null) {
 					int numCoin = Integer.valueOf(obj.getProperties().get("coins").toString());
 					box.setCoin(numCoin);
+					totalScore += numCoin * coin.getScore();
 				} 
 				
 				// has bullets
@@ -392,7 +394,8 @@ public class Level extends World {
 				enemy.setX(rect.x + (rect.width - enemy.getWidth())/2);
 				enemy.setY(rect.y + (enemy.getHeight())/2);
 				addEntity(enemy);
-				
+				totalScore += enemy.getScore();
+
 				enemy.addListener(enemyListener);
 			}
 			else if(name.equals("enemy2")) {
@@ -401,7 +404,8 @@ public class Level extends World {
 				enemy.setX(rect.x + (rect.width - enemy.getWidth())/2);
 				enemy.setY(rect.y + (enemy.getHeight())/2);
 				addEntity(enemy);
-				
+				totalScore += enemy.getScore();
+
 				enemy.addListener(enemyListener);
 			}
 			else {
@@ -690,6 +694,7 @@ public class Level extends World {
 		mario.gameCompleted();
 		
 		score += 500;
+		totalScore += 500;
 		updatePanel();
 		toastLabel("500", flag.getX() ,mario.getTop());
 		
@@ -930,6 +935,19 @@ public class Level extends World {
 			levelFailed2();
 		}
 	}
+
+	private int calculateStarsForLevel() {
+		double percent = ((double) score / totalScore) * 100.0;
+		if (percent >= 0.0 && percent < 40.0) {
+			return 1;
+		}
+		if (percent >= 40.0 && percent < 80.0) {
+			return 2;
+		} else {
+			return 3;
+		}
+	}
+
 	protected void levelCompleted() {
 		//persistent data ...
 		//update the level progress
@@ -943,7 +961,10 @@ public class Level extends World {
 		pauseWorld();
 		
 		//show "level completed" dialog box
-		SuperMario.data.saveStar(id, 3);
+		int stars = calculateStarsForLevel();
+		if (SuperMario.data.getStar(id) < stars) {
+			SuperMario.data.saveStar(id, stars);
+		}
 
 		LevelCompletedDialog dialog = new LevelCompletedDialog(score);
 		addOverlayChild(dialog);

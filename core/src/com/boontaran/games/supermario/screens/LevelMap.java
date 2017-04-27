@@ -78,7 +78,9 @@ public class LevelMap extends StageGame {
 		curLevelProgress = 1+SuperMario.data.getLevelProgress();
 
 
-		totalScore += SuperMario.data.getScore(5);
+        for (int i=0; i<100; i++) {
+            totalScore += SuperMario.data.getScore(i);
+        }
 
 		
 		//displaying total score
