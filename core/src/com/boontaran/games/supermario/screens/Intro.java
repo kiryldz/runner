@@ -26,7 +26,7 @@ public class Intro extends StageGame {
 		//game title
 		Image title = new Image(SuperMario.atlas.findRegion("title"));
 		centerActorX(title);
-		title.setY(getHeight() - title.getHeight() - 100);
+		title.setY(getHeight() - title.getHeight() - 60);
 		addChild(title);
 		
 		//play button
@@ -34,9 +34,25 @@ public class Intro extends StageGame {
 				new TextureRegionDrawable(SuperMario.atlas.findRegion("play_btn")), 
 				new TextureRegionDrawable(SuperMario.atlas.findRegion("play_btn_down")));
 		centerActorX(playBtn);
-		playBtn.setY(100);
+		playBtn.setY(getHeight() - title.getHeight() - 170);
 		addChild(playBtn);
-		
+
+		//playhardcore button
+		ImageButton playhardcoreBtn = new ImageButton(
+				new TextureRegionDrawable(SuperMario.atlas.findRegion("playhardcore_btn")),
+				new TextureRegionDrawable(SuperMario.atlas.findRegion("playhardcore_btn_down")));
+		centerActorX(playhardcoreBtn);
+		playhardcoreBtn.setY(getHeight() - title.getHeight() - 280);
+		addChild(playhardcoreBtn);
+
+		//megalvl button
+		ImageButton megalvlBtn = new ImageButton(
+				new TextureRegionDrawable(SuperMario.atlas.findRegion("megalvl_btn")),
+				new TextureRegionDrawable(SuperMario.atlas.findRegion("megalvl_btn_down")));
+		centerActorX(megalvlBtn);
+		megalvlBtn.setY(getHeight() - title.getHeight() - 370);
+		addChild(megalvlBtn);
+
 		//btn listener
 		playBtn.addListener(new ClickListener(){
 			@Override
