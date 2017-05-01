@@ -34,7 +34,7 @@ public class Intro extends StageGame {
 				new TextureRegionDrawable(SuperMario.atlas.findRegion("play_btn")), 
 				new TextureRegionDrawable(SuperMario.atlas.findRegion("play_btn_down")));
 		centerActorX(playBtn);
-		playBtn.setY(getHeight() - title.getHeight() - 170);
+		playBtn.setY(getHeight() - title.getHeight() - 190);
 		addChild(playBtn);
 
 		//playhardcore button
