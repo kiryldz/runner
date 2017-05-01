@@ -38,7 +38,7 @@ brick_d1
   index: -1
 brick_d2
   rotate: false
-  xy: 863, 20
+  xy: 1118, 354
   size: 17, 16
   orig: 17, 16
   offset: 0, 0
@@ -52,14 +52,28 @@ brick_d3
   index: -1
 brick_d4
   rotate: false
-  xy: 1744, 919
+  xy: 1160, 503
   size: 15, 23
   orig: 15, 23
   offset: 0, 0
   index: -1
+brick_lock
+  rotate: false
+  xy: 1676, 878
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+brick_lock_old
+  rotate: false
+  xy: 1676, 653
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
 bullet
   rotate: false
-  xy: 1263, 627
+  xy: 2019, 919
   size: 25, 25
   orig: 25, 25
   offset: 0, 0
@@ -87,14 +101,14 @@ bullet_exp
   index: -1
 bullet_icon
   rotate: false
-  xy: 1009, 200
+  xy: 1263, 629
   size: 23, 23
   orig: 23, 23
   offset: 0, 0
   index: -1
 bullet_stock
   rotate: false
-  xy: 1987, 903
+  xy: 1854, 814
   size: 41, 41
   orig: 41, 41
   offset: 0, 0
@@ -108,7 +122,7 @@ coin
   index: -1
 coin_icon
   rotate: false
-  xy: 831, 16
+  xy: 1987, 910
   size: 28, 34
   orig: 28, 34
   offset: 0, 0
@@ -143,7 +157,7 @@ flag
   index: -1
 health_bar_bar
   rotate: false
-  xy: 776, 298
+  xy: 1152, 400
   size: 3, 16
   orig: 3, 16
   offset: 0, 0
@@ -241,21 +255,21 @@ level_failed
   index: -1
 level_select_bg
   rotate: false
-  xy: 1609, 632
+  xy: 1903, 865
   size: 39, 39
   orig: 39, 39
   offset: 0, 0
   index: -1
 level_select_bg_disabled
   rotate: false
-  xy: 1118, 331
+  xy: 1854, 771
   size: 39, 39
   orig: 39, 39
   offset: 0, 0
   index: -1
 level_select_bg_down
   rotate: false
-  xy: 1118, 288
+  xy: 782, 11
   size: 39, 39
   orig: 39, 39
   offset: 0, 0
@@ -297,21 +311,21 @@ music_on
   index: -1
 mystery_box
   rotate: false
-  xy: 1676, 878
+  xy: 1744, 653
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 mystery_box_hit
   rotate: false
-  xy: 1676, 653
+  xy: 1786, 840
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 mystery_box_inactive
   rotate: false
-  xy: 1744, 653
+  xy: 1786, 772
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
@@ -367,14 +381,14 @@ playhardcore_btn_down
   index: -1
 pole
   rotate: false
-  xy: 1118, 274
+  xy: 1744, 932
   size: 15, 10
   orig: 15, 10
   offset: 0, 0
   index: -1
 pole_top
   rotate: false
-  xy: 782, 5
+  xy: 1854, 859
   size: 45, 45
   orig: 45, 45
   offset: 0, 0
@@ -423,14 +437,14 @@ sound_on
   index: -1
 star_g
   rotate: false
-  xy: 1652, 651
+  xy: 737, 130
   size: 20, 20
   orig: 20, 20
   offset: 0, 0
   index: -1
 star_y
   rotate: false
-  xy: 737, 130
+  xy: 1009, 203
   size: 20, 20
   orig: 20, 20
   offset: 0, 0
