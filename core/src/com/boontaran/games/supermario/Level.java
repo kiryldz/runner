@@ -640,7 +640,7 @@ public class Level extends World {
 			numBullets += stock.getAmount();
 			updatePanel();
 			
-			toastLabel(String.valueOf(stock.getAmount())+" Bullets", stock.getX(), stock.getY()+30,1);
+			toastLabel(String.valueOf(stock.getAmount())+" Snowballs", stock.getX(), stock.getY()+30,1);
 			
 			SuperMario.media.playSound("bullet_pack");
 			
